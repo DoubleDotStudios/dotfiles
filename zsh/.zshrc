@@ -1,3 +1,5 @@
+fastfetch
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -97,7 +99,8 @@ function yy() {
 }
 
 # Helpful aliases
-alias  c='clear' # clear terminal
+alias cls='clear; fastfetch' # clear terminal
+alias  c='clear'
 alias  l='eza -lh  --icons=auto' # long list
 alias ls='eza -1   --icons=auto' # short list
 alias ll='eza -lha --icons=auto --sort=name --group-directories-first' # long list all
@@ -109,7 +112,6 @@ alias pl='$aurhelper -Qs' # list installed package
 alias pa='$aurhelper -Ss' # list availabe package
 alias pc='$aurhelper -Sc' # remove unused cache
 alias po='$aurhelper -Qtdq | $aurhelper -Rns -' # remove unused packages, also try > $aurhelper -Qqd | $aurhelper -Rsu --print -
-alias vc='code' # gui code editor
 alias vim='nvim'
 alias vi='nvim'
 alias v='nvim'
@@ -124,12 +126,15 @@ alias df='df -h'
 
 alias byte='~/Desktop/Scripts/byte'
 
-alias godot='/usr/bin/Godot'
 alias quartz='/usr/bin/quartz'
 
 alias reload='source ~/.zshrc'
 
 alias venv='source ~/Desktop/Projects/Py\ Projects/Pyglet/bin/activate'
+
+alias hx='helix'
+
+alias icat='c; kitten icat'
 
 # Handy change dir shortcuts
 alias ..='cd ..'
@@ -140,6 +145,8 @@ alias .5='cd ../../../../..'
 
 # Always mkdir a path (this doesn't inhibit functionality to make a single dir)
 alias mkdir='mkdir -p'
+
+alias fast='~/.config/fastfetch/fast'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
@@ -163,11 +170,13 @@ setopt hist_find_no_dups
 zstyle ':completion:*' matcher-list 'm:{a-z}={A-Za-z}'
 zstyle ':completion:*' list-colors "${(s.:.)LS_COLORS}"
 zstyle ':completion:*' menu no
-zstyle ':fzf-tab:complete:cd:*' fzf-preview 'eza -1 --icons=auto $realpath'
-zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'eza -1 --icons=auto $realpath'
+zstyle ':fzf-tab:complete:cd:*' fzf-preview 'ls --color $realpath'
+zstyle ':fzf-tab:complete:__zoxide_z:*' fzf-preview 'ls --color $realpath'
 
 eval "$(fzf --zsh)"
 eval "$(zoxide init --cmd cd zsh)"
 
 #Display Pokemon
-pokemon-colorscripts --no-title -r -n ditto
+# pokemon-colorscripts --no-title -r -n ditto
+
+export TERMINAL="/usr/bin/kitty"
