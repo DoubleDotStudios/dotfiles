@@ -13,13 +13,13 @@
 
    Ubuntu:
 
-   ```
+   ```console
    sudo apt-get fonts-cascadia-code fonts-noto
    ```
 
    Fedora:
 
-   ```
+   ```console
    dnf cascadia-code-fonts install google-noto-fonts-all
    ```
 
