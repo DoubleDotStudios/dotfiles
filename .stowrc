@@ -1,0 +1,3 @@
+--target=~/.config
+--ignore='.stowrc|.*\.md|.github|zsh'
+--verbose
