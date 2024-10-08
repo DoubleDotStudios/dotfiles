@@ -27,40 +27,14 @@
    ```console
    git clone https://github.com/DoubleDotStudios/dotfiles.git ~
    ```
-4. Use GNU stow to symlink the directories into '~/.config'.
+4. Use GNU stow to symlink the directories.
 
-   ### Dunst:
-
+   ### Tmux, Nvim, Kitty, Fastfetch, and Dunst (~/.config)
    ```console
-   stow dunst
+   stow .
    ```
 
-   ### Fastfetch
-
+   ### Zshrc (~/.zshrc and ~/.zshenv)
    ```console
-   stow fastfetch
-   ```
-
-   ### Neovim
-
-   ```console
-   stow nvim
-   ```
-
-   ### Kitty
-
-   ```console
-   stow kitty
-   ```
-
-   ### Tmux
-
-   ```console
-   stow tmux
-   ```
-
-   ### Zshrc
-
-   ```console
-   stow zsh
+   stow -v -t ~ zsh/
    ```
